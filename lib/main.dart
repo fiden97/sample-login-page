@@ -63,12 +63,10 @@ class Home extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: Container(
-                  // padding: EdgeInsets.all(100),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        // alignment: Alignment.topLeft,
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(15, 30, 0, 30),
                           child: Text(

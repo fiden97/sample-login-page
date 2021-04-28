@@ -27,6 +27,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
             child: Container(
       width: MediaQuery.of(context).size.width,
@@ -61,7 +62,7 @@ class Home extends StatelessWidget {
                       )),
               // Login
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +80,7 @@ class Home extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 385,
+                        width: double.infinity,
                         padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                         child: TextField(
                           decoration: InputDecoration(
@@ -91,7 +92,7 @@ class Home extends StatelessWidget {
                         height: 20,
                       ),
                       Container(
-                        width: 385,
+                        width: double.infinity,
                         padding:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 0),
                         child: TextField(
@@ -126,40 +127,45 @@ class Home extends StatelessWidget {
                         children: [
                           Expanded(
                             flex: 3,
-                            child: Container(
-                                alignment: Alignment.bottomLeft,
-                                padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ButtonStyle(
-                                    padding: MaterialStateProperty.all(
-                                        EdgeInsets.symmetric(
-                                            horizontal: 30, vertical: 20)),
-                                    backgroundColor: MaterialStateProperty.all(
-                                        fcmMidnightBlack),
-                                  ),
-                                  child: Text('Login'),
-                                )),
+                            child: FittedBox(
+                              child: Container(
+                                  alignment: Alignment.bottomLeft,
+                                  padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    style: ButtonStyle(
+                                      // minimumSize: MaterialStateProperty.all(Size(250, 150)),
+                                      padding: MaterialStateProperty.all(
+                                          EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 20)),
+                                      backgroundColor: MaterialStateProperty.all(
+                                          fcmMidnightBlack),
+                                    ),
+                                    child: Text('Login'),
+                                  )),
+                            ),
                           ),
                           SizedBox(
                             width: 30,
                           ),
                           Expanded(
                             flex: 7,
-                            child: Container(
-                                width: 200,
-                                alignment: Alignment.bottomRight,
-                                padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                                child: OutlinedButton(
-                                  onPressed: () {},
-                                  style: OutlinedButton.styleFrom(
-                                    side: BorderSide(color: fcmMidnightBlack),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 20),
-                                    primary: fcmMidnightBlack,
-                                  ),
-                                  child: Text('New User Registration'),
-                                )),
+                            child: FittedBox(
+                              child: Container(
+                                  width: 200,
+                                  alignment: Alignment.bottomRight,
+                                  padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                                  child: OutlinedButton(
+                                    onPressed: () {},
+                                    style: OutlinedButton.styleFrom(
+                                      side: BorderSide(color: fcmMidnightBlack),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 20),
+                                      primary: fcmMidnightBlack,
+                                    ),
+                                    child: Text('New User Registration'),
+                                  )),
+                            ),
                           )
                         ],
                       ),
@@ -167,6 +173,7 @@ class Home extends StatelessWidget {
                   ),
                   width: 500,
                   height: 320,
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
                   decoration: BoxDecoration(
                     color: fcmClarityWhite,
                     borderRadius: BorderRadius.circular(10),
@@ -174,7 +181,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               Expanded(
-                  flex: 5,
+                  flex: 6,
                   child: Column(
                     children: [
                       Align(

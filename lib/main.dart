@@ -18,6 +18,8 @@ Color fcmGreyFive = Color(0xFFAAAAAA);
 Color fcmGreySix = Color(0xFF818181);
 Color fcmRed = Colors.red;
 
+String dataAPI = "https://prod-12.southeastasia.logic.azure.com:443/workflows/6af05f1da3bd49dc91537298f58e4dc2/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XIc9mMxXfXD-t-sUdMdvGmTvg34rZwAnIVmOkn67ex0";
+
 void main() => runApp(MaterialApp(
       home: Home(),
       debugShowCheckedModeBanner: false,
@@ -27,7 +29,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
+        // resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
             child: Container(
       width: MediaQuery.of(context).size.width,
@@ -62,7 +64,7 @@ class Home extends StatelessWidget {
                       )),
               // Login
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,52 +129,28 @@ class Home extends StatelessWidget {
                         children: [
                           Expanded(
                             flex: 3,
-                            child: FittedBox(
                               child: Container(
-                                  alignment: Alignment.bottomLeft,
-                                  padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.fromLTRB(15, 0, 0, 15),
                                   child: ElevatedButton(
                                     onPressed: () {},
                                     style: ButtonStyle(
-                                      // minimumSize: MaterialStateProperty.all(Size(250, 150)),
                                       padding: MaterialStateProperty.all(
                                           EdgeInsets.symmetric(
                                               horizontal: 30, vertical: 20)),
-                                      backgroundColor: MaterialStateProperty.all(
-                                          fcmMidnightBlack),
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              fcmMidnightBlack),
                                     ),
                                     child: Text('Login'),
                                   )),
-                            ),
                           ),
-                          SizedBox(
-                            width: 30,
-                          ),
-                          Expanded(
-                            flex: 7,
-                            child: FittedBox(
-                              child: Container(
-                                  width: 200,
-                                  alignment: Alignment.bottomRight,
-                                  padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                                  child: OutlinedButton(
-                                    onPressed: () {},
-                                    style: OutlinedButton.styleFrom(
-                                      side: BorderSide(color: fcmMidnightBlack),
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 20),
-                                      primary: fcmMidnightBlack,
-                                    ),
-                                    child: Text('New User Registration'),
-                                  )),
-                            ),
-                          )
                         ],
                       ),
                     ],
                   ),
                   width: 500,
-                  height: 320,
+                  // height: 320,
                   margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
                   decoration: BoxDecoration(
                     color: fcmClarityWhite,
@@ -189,7 +167,7 @@ class Home extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                           child: Text(
-                            'Portal Login - Duty Travel SG',
+                            'User Provisioning for FCM Hub Demo Sites',
                             style: TextStyle(
                               color: fcmClarityWhite,
                               fontWeight: FontWeight.bold,
@@ -198,7 +176,9 @@ class Home extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      SizedBox(
+                        height: 20,
+                      ),
                       Container(
                         padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                         alignment: Alignment.topLeft,
@@ -210,10 +190,12 @@ class Home extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.fromLTRB(25, 10, 0, 0),
-                        alignment: Alignment.topLeft,
-                        child: Image.asset('picture/FCMWhite.png', height: 20,)
-                      ),
+                          padding: EdgeInsets.fromLTRB(25, 10, 0, 0),
+                          alignment: Alignment.topLeft,
+                          child: Image.asset(
+                            'picture/FCMWhite.png',
+                            height: 20,
+                          )),
                     ],
                   ))
             ],
